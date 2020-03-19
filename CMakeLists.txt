@@ -7,12 +7,7 @@ find_package(catkin REQUIRED
     rostest
 )
 
-#just a comment
 catkin_python_setup()
-
-catkin_package(
-  INCLUDE_DIRS src
-)
 
 include_directories()
 
