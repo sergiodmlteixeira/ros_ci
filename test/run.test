@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <test test-name="ros_ci_test_node" pkg="ros_ci" type="test_ci.py"/>
+</launch>
