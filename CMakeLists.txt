@@ -2,12 +2,10 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ros_ci)
 
 find_package(catkin REQUIRED    
-    roscpp
     rospy
     rostest
 )
 
-#just a comment
 catkin_python_setup()
 
 catkin_package(
