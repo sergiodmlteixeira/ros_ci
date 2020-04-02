@@ -6,7 +6,7 @@ import unittest
 PKG = 'ros_ci'
 
 class SampleTest(unittest.TestCase):
- 
+
     def test_one_equals_one(self):
         self.assertEquals(1, 1, "1 != 1")
 
