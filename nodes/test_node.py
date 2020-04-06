@@ -13,6 +13,9 @@ if __name__ == "__main__":
         b = 3
         a = a
         b = 3
+        b = 3
+        b=3
+        b= 3
         rospy.loginfo('Test node!')
         rospy.spin()
 
