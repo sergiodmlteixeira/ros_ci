@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-class TestClass(object):
+class ExampleClass(object):
 
     def __init__(self, identifier, name='defaultname'):
 

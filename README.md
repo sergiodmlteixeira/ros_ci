@@ -14,3 +14,8 @@ A simple _ROS_ package for continuous integration (_CI_) tests. Developed in Pyt
 
 test!
 
+catkin_make run_tests -DCMAKE_CXX_FLAGS=--coverage
+find -type f -name .coverage -printf "%h\n"
+
+Check tomorrow: CMakeList of the sr sample package. Adapt ros_ci to the same format
+
