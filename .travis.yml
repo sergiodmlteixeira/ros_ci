@@ -2,6 +2,9 @@ language: generic
 services:
   - docker
 
+variables:
+  - CATKIN_LINT=true
+
 env:
   matrix:
     - ROS_DISTRO="melodic"
