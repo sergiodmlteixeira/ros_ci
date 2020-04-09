@@ -2,7 +2,7 @@
 <package format="2">
   <name>ros_ci_python</name>
   <version>0.0.0</version>
-  <description>The ros_ci_python package</description>
+  <description>A simple ROS package for continuous integration (CI) tests. Developed in Python.</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
