@@ -4,6 +4,7 @@ services:
 
 variables:
   - CATKIN_LINT=true
+  - BUILDER=catkin_make
 
 env:
   matrix:
