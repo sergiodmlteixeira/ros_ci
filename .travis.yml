@@ -4,7 +4,7 @@ services:
 
 env:
   matrix:
-    - ROS_DISTRO="melodic"  CATKIN_LINT=true  BUILDER=catkin_make CATKIN_TEST_COVERAGE=1 CMAKE_ARGS="-DCMAKE_CXX_FLAGS=--coverage"
+    - ROS_DISTRO="melodic"  CATKIN_LINT=true  BUILDER=catkin_make CATKIN_TEST_COVERAGE=1 CMAKE_ARGS="-DCMAKE_CXX_FLAGS=--coverage"  PARALLEL_TESTS=true
 
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
