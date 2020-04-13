@@ -4,8 +4,8 @@ services:
 
 env:
   global:
-    - BEFORE_INIT='.ci/before_init.sh'
-    - AFTER_SCRIPT='.ci/after_script.sh'
+    - BEFORE_INIT='./before_init.sh'
+    - AFTER_SCRIPT='./after_script.sh'
   matrix:
     - ROS_DISTRO="melodic"  CATKIN_LINT=true  BUILDER=catkin_make ADDITIONAL_DEBS=python-coverage DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS=--coverage'
 install:
