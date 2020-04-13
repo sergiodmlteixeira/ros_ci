@@ -1,0 +1,1 @@
+cat /root/target_ws/build/test_results/ros_ci_python/nosetests-test.xml

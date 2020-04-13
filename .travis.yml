@@ -4,8 +4,8 @@ services:
 
 env:
   global:
-    BEFORE_INIT='sudo apt-get install jq && curl -LSs "$(curl -LSs https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | endswith(".jar"))) | .[0].browser_download_url')" -o codacy-coverage-reporter-assembly.jar'
-    AFTER_SCRIPT='cat /root/target_ws/build/test_results/ros_ci_python/nosetests-test.xml'
+    - BEFORE_INIT='.ci/before_init.sh'
+    - AFTER_SCRIPT='.ci/after_script.sh'
   matrix:
     - ROS_DISTRO="melodic"  CATKIN_LINT=true  BUILDER=catkin_make ADDITIONAL_DEBS=python-coverage DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS=--coverage'
 install:
