@@ -14,5 +14,5 @@ install:
 script:
   - .industrial_ci/travis.sh
 after_success:
-  - cat /root/target_ws/build/test_results/ros_ci_python/nosetests-test.xml
+  - sudo cat /root/target_ws/build/test_results/ros_ci_python/nosetests-test.xml
 #   - java -jar codacy-coverage-reporter-assembly.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
