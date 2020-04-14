@@ -15,7 +15,7 @@ curl -Ls -o codacy-coverage-reporter "$(curl -Ls https://api.github.com/repos/co
 chmod +x codacy-coverage-reporter
 
 # Report Python coverage
-./codacy-coverage-reporter report --commit-uuid $TRAVIS_COMMIT -l Python -r coverage.xml
+# ./codacy-coverage-reporter report --commit-uuid $TRAVIS_COMMIT -l Python -r coverage.xml
 
 # Report Cpp coverage
-./codacy-coverage-reporter report --commit-uuid $TRAVIS_COMMIT -l Cpp -r coverage_cpp.xml
+./codacy-coverage-reporter report --commit-uuid $TRAVIS_COMMIT --language Cpp --force-language -r coverage_cpp.xml
