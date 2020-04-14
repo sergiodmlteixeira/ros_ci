@@ -9,6 +9,12 @@ python -m coverage xml
 
 # Generate Cpp coverage xml
 
+GCDA="$(find . -type f -name *.gcda)"
+echo "${GCDA}"
+
+GCNO="$(find . -type f -name *.gcno)"
+echo "${GCNO}"
+
 OUTPUT="$(gcovr -r /root/target_ws/)"
 echo "${OUTPUT}"
 
