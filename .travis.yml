@@ -5,8 +5,11 @@ services:
 env:
   global:
     - AFTER_SCRIPT='./after_script.sh'
+    - BUILDER=catkin_make
+    - ADDITIONAL_DEBS="python-coverage curl jq"
+    - DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS=--coverage -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
   matrix:
-    - ROS_DISTRO="melodic"  CATKIN_LINT=true  BUILDER=catkin_make ADDITIONAL_DEBS="python-coverage curl jq" DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS=--coverage -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
+    - ROS_DISTRO="melodic"  CATKIN_LINT=true
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
