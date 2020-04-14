@@ -4,7 +4,7 @@ services:
 
 env:
   global:
-    - AFTER_SCRIPT='./after_script.sh'
+    - AFTER_SCRIPT='./codacy.sh'
     - BUILDER=catkin_make
     - ADDITIONAL_DEBS="python-coverage curl jq"
     - DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS=--coverage -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
