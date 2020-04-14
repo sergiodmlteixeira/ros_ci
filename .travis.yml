@@ -9,7 +9,7 @@ env:
     - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
     - DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e CMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage" -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
   matrix:
-    - ROS_DISTRO="melodic"  CATKIN_LINT=true
+    - ROS_DISTRO="melodic"
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
