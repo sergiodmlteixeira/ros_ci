@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Combine .coverage files & Combine result to xml
-python -m coverage combine `find /root/target_ws -type f -name .coverage`
+sudo python -m coverage combine `find /root/target_ws -type f -name .coverage`
 # python -m coverage xml
 
 # # Setup & Upload Codacy Reporter
