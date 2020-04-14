@@ -8,7 +8,8 @@ python -m coverage combine `find . -type f -name .coverage`
 python -m coverage xml
 
 # Generate Cpp coverage xml
-gcovr --xml-pretty > coverage_cpp.xml
+# echo gcovr
+gcovr -r /root/target_ws/ --xml-pretty > coverage_cpp.xml
 
 # Setup & Upload Codacy Reporter
 curl -Ls -o codacy-coverage-reporter "$(curl -Ls https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | contains("codacy-coverage-reporter-linux"))) | .[0].browser_download_url')"
