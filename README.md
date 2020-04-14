@@ -4,6 +4,8 @@
 
 A simple _ROS_ package for continuous integration (_CI_) tests. Developed in Python.
 
+## For Python:
+
 * To compile and run tests+coverage, run:
 
 ```bash
@@ -14,4 +16,14 @@ CATKIN_TEST_COVERAGE=1 catkin_make run_tests -DCMAKE_CXX_FLAGS=--coverage
 
 ```bash
 find -type f -name .coverage -printf "%h\n"
+```
+
+## For C++:
+
+```bash
+CATKIN_TEST_COVERAGE=1 catkin_make run_tests -DCMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage"
+```
+
+```bash
+gcovr -r /home/rarrais/catkin_ws --xml-pretty > coverage.xml
 ```
