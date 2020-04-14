@@ -15,8 +15,8 @@ echo "${GCDA}"
 GCNO="$(find /root/target_ws/ -type f -name *.gcno)"
 echo "${GCNO}"
 
-# OUTPUT="$(gcovr -v -r /root/target_ws/)"
-# echo "${OUTPUT}"
+OUTPUT="$(gcovr -v -r /root/target_ws/)"
+echo "${OUTPUT}"
 
 # gcovr -r /root/target_ws/ --xml-pretty > coverage_cpp.xml
 
