@@ -11,4 +11,5 @@ install:
 before_script:
   - .ros_coverage/travis.sh
 script:
+  - printenv
   - .industrial_ci/travis.sh
