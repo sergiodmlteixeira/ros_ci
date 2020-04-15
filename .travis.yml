@@ -4,7 +4,7 @@ services:
 
 env:
   global:
-    - BEFORE_INIT='bash <(wget -q -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh)'
+    - BEFORE_INIT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
   matrix:
     - ROS_DISTRO="melodic"
 install:

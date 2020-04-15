@@ -31,7 +31,7 @@ gcovr -r /home/rarrais/catkin_ws --xml-pretty > coverage.xml
 ## For Local use:
 
 ```bash
-rosrun industrial_ci rerun_ci . ROS_DISTRO=melodic BEFORE_INIT='bash <(wget -q -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh)'
+rosrun industrial_ci rerun_ci . ROS_DISTRO=melodic BEFORE_INIT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
 ```
 
 
