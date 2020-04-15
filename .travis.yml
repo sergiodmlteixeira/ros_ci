@@ -3,11 +3,11 @@ services:
   - docker
 
 env:
+  global:
+    - BEFORE_INIT='bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh)'
   matrix:
     - ROS_DISTRO="melodic"
 install:
-  - git clone --quiet --depth 1 https://github.com/rarrais/ros_coverage.git .ros_coverage -b master
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
-  - .ros_coverage/travis.sh
   - .industrial_ci/travis.sh
