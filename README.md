@@ -27,3 +27,17 @@ CATKIN_TEST_COVERAGE=1 catkin_make run_tests -DCMAKE_CXX_FLAGS="--coverage -fpro
 ```bash
 gcovr -r /home/rarrais/catkin_ws --xml-pretty > coverage.xml
 ```
+
+## For Local use:
+
+```bash
+rosrun industrial_ci rerun_ci . ROS_DISTRO=melodic AFTER_SCRIPT='./codacy.sh' BUILDER=catkin_make ADDITIONAL_DEBS="python-coverage curl jq gcovr" DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
+```
+
+```bash
+docker run -it industrial-ci/rerun_ci/ros_ci:83d94804ec7c /bin/bash
+```
+
+```bash
+docker rmi industrial-ci/rerun_ci/ros_ci:83d94804ec7c -f
+```

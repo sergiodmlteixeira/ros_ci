@@ -48,6 +48,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 #############
 
 if(CATKIN_ENABLE_TESTING)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -fprofile-arcs -ftest-coverage")
   catkin_add_gtest(ros_ci_cpp_library_tests test/test_ros_ci_cpp_class.cpp)
   target_link_libraries(ros_ci_cpp_library_tests ros_ci_cpp_library ${catkin_LIBRARIES})
 endif()

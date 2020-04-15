@@ -27,5 +27,6 @@ install(PROGRAMS
 #############
 
 if (CATKIN_ENABLE_TESTING)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
   catkin_add_nosetests(test)
 endif()
