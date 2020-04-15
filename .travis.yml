@@ -8,6 +8,7 @@ env:
 install:
   - git clone --quiet --depth 1 https://github.com/rarrais/ros_coverage.git .ros_coverage -b master
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
-script:
+before_script:
   - .ros_coverage/travis.sh
+script:
   - .industrial_ci/travis.sh
