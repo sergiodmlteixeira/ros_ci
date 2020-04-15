@@ -3,14 +3,11 @@ services:
   - docker
 
 env:
-  global:
-    - AFTER_SCRIPT='./codacy.sh'
-    - BUILDER=catkin_make
-    - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
-    - DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
   matrix:
     - ROS_DISTRO="melodic"
 install:
+  - git clone --quiet --depth 1 https://github.com/rarrais/ros_coverage.git .ros_coverage -b master
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
+  - .ros_coverage/travis.sh
   - .industrial_ci/travis.sh
