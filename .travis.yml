@@ -4,16 +4,10 @@ services:
 
 env:
   global:
-    - BEFORE_PREPARE_DOCKER_IMAGE='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
-    - AFTER_PREPARE_DOCKER_IMAGE='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
-    - BEFORE_INIT='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
-    - AFTER_INIT='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
-    - BEFORE_CATKIN_TOOLS_SETUP='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
-    - AFTER_CATKIN_TOOLS_SETUP='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - CODE_COVERAGE="true"
   matrix:
     - ROS_DISTRO="melodic"
 install:
-  - git clone --quiet --depth 1 https://github.com/rarrais/ros_coverage.git .ros_coverage -b master
-  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
+  - git clone --quiet --depth 1 https://github.com/rarrais/industrial_ci.git .industrial_ci -b master
 script:
-  - .ros_coverage/travis.sh && .industrial_ci/travis.sh
+  - .industrial_ci/travis.sh
