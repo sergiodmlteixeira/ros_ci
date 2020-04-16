@@ -3,6 +3,11 @@ services:
   - docker
 
 env:
+  global:
+    - BEFORE_PREPARE_DOCKER_IMAGE='printenv'
+    - AFTER_PREPARE_DOCKER_IMAGE='printenv'
+    - BEFORE_INIT='printenv'
+    - AFTER_INIT='printenv'
   matrix:
     - ROS_DISTRO="melodic"
 install:
