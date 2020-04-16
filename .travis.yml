@@ -4,10 +4,13 @@ services:
 
 env:
   global:
-    - CODE_COVERAGE="true"
+    - AFTER_SCRIPT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/codacy.sh | bash'
+    - BUILDER=catkin_make
+    - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
+    - DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN'
   matrix:
     - ROS_DISTRO="melodic"
 install:
-  - git clone --quiet --depth 1 https://github.com/rarrais/industrial_ci.git .industrial_ci -b master
+  - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
   - .industrial_ci/travis.sh
