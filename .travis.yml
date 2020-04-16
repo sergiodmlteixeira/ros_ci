@@ -4,10 +4,12 @@ services:
 
 env:
   global:
-    - BEFORE_PREPARE_DOCKER_IMAGE='printenv'
-    - AFTER_PREPARE_DOCKER_IMAGE='printenv'
-    - BEFORE_INIT='printenv'
-    - AFTER_INIT='printenv'
+    - BEFORE_PREPARE_DOCKER_IMAGE='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - AFTER_PREPARE_DOCKER_IMAGE='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - BEFORE_INIT='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - AFTER_INIT='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - BEFORE_CATKIN_TOOLS_SETUP='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
+    - AFTER_CATKIN_TOOLS_SETUP='printenv && wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/travis.sh | bash'
   matrix:
     - ROS_DISTRO="melodic"
 install:
