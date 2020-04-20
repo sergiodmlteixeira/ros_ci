@@ -44,4 +44,9 @@ docker rmi industrial-ci/rerun_ci/ros_ci:83d94804ec7c -f
 ```
 
 
+```bash
+curl --data-binary @codecov.yml https://codecov.io/validate
+```
+
+
 
