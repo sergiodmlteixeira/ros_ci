@@ -5,7 +5,7 @@ services:
 env:
   global:
     - AFTER_SCRIPT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh | bash'
-    - BUILDER=catkin_make
+    # - BUILDER=catkin_make
     - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
     - ci_env=`bash <(curl -s https://codecov.io/env)`
     - DOCKER_RUN_OPTS='$ci_env -e CATKIN_TEST_COVERAGE=1 -e CODACY_PROJECT_TOKEN'
