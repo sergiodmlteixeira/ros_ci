@@ -31,9 +31,8 @@ gcovr -r /home/rarrais/catkin_ws --xml-pretty > coverage.xml
 ## For Local use:
 
 ```bash
-rosrun industrial_ci rerun_ci . ROS_DISTRO=melodic CODE_COVERAGE="true"
+rosrun industrial_ci rerun_ci . ROS_DISTRO=melodic AFTER_SCRIPT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh | bash' BUILDER=catkin_make ADDITIONAL_DEBS="python-coverage curl jq gcovr" ci_env=`bash <(curl -s https://codecov.io/env)` DOCKER_RUN_OPTS='-e CATKIN_TEST_COVERAGE=1 -e TRAVIS_COMMIT -e CODACY_PROJECT_TOKEN -e ci_env'
 ```
-
 
 
 ```bash
