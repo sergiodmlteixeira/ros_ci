@@ -4,8 +4,9 @@ ignore:
   - "**/test_*.py"
 
 fixes:
-  - "/root/target_ws/src/ros_ci/::"
+  - "src/ros_ci/::"
 
+  # https://codecov.io/gh/rarrais/ros_ci/src/master/src/ros_ci/ros_ci_cpp/src/ros_ci_cpp_class.cpp
   # https://codecov.io/gh/rarrais/ros_ci/src/master/src/ros_ci/ros_ci_cpp/src/ros_ci_cpp_class.cpp
   # https://codecov.io/gh/rarrais/ros_ci/src/master/src/ros_ci/ros_ci_cpp/src/ros_ci_cpp_class.cpp
   # https://github.com/rarrais/ros_ci/blob/master/ros_ci_cpp/src/ros_ci_cpp_class.cpp
