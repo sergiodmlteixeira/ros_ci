@@ -1,4 +1,4 @@
 ignore:
   - "**/__init__.py"
-  - "test_*.cpp"
-  - "test_*.py"
+  - "**/test_*.cpp"
+  - "**/test_*.py"
