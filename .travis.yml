@@ -4,6 +4,8 @@ services:
 
 env:
   global:
+    - CODACY_REPORT="true"
+    - CODECOV_REPORT="false"
     - AFTER_SCRIPT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh | bash'
     - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
     - CI_ENV=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/ci_env.sh)`
