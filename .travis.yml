@@ -6,7 +6,7 @@ env:
   global:
     - CODACY_REPORT="true"
     - CODECOV_REPORT="true"
-    - AFTER_SCRIPT='wget -O - https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh | bash'
+    - AFTER_SCRIPT='bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh)'
     - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
     - CI_ENV=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/ci_env.sh)`
     - DOCKER_RUN_OPTS='$CI_ENV'
