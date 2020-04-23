@@ -4,12 +4,10 @@ services:
 
 env:
   global:
-    - CODACY_REPORT="true"
-    - CODECOV_REPORT="true"
     - CODE_COVERAGE=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/develop/ros_coverage.sh)`
     - DOCKER_RUN_OPTS=$CODE_COVERAGE
   matrix:
-    - ROS_DISTRO="melodic"
+    - ROS_DISTRO="melodic"  CODACY_REPORT="true"  CODECOV_REPORT="true"
 install:
   - git clone --quiet --depth 1 https://github.com/ros-industrial/industrial_ci.git .industrial_ci -b master
 script:
