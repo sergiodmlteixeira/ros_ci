@@ -8,7 +8,7 @@ env:
     - CODECOV_REPORT="true"
     - AFTER_SCRIPT='bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/develop/.ros_coverage/after_script.sh)'
     - CODE_COVERAGE=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/develop/ros_coverage.sh)`
-    - DOCKER_RUN_OPTS='$CODE_COVERAGE'
+    - DOCKER_RUN_OPTS=$CODE_COVERAGE
   matrix:
     - ROS_DISTRO="melodic"
 install:
