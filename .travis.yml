@@ -4,8 +4,7 @@ services:
 
 env:
   global:
-    - CODE_COVERAGE=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/develop/ros_coverage.sh)`
-    - DOCKER_RUN_OPTS=$CODE_COVERAGE
+    - DOCKER_RUN_OPTS=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/develop/ros_coverage.sh)`
   matrix:
     - ROS_DISTRO="melodic"  CODACY="true"  CODECOV="true"
 install:
