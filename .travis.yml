@@ -4,12 +4,9 @@ services:
 
 env:
   global:
-    - CODACY_REPORT="true"
-    - CODECOV_REPORT="true"
-    - ADDITIONAL_DEBS="python-coverage curl jq gcovr"
     - AFTER_SCRIPT='bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/code-coverage.sh)'
     - CI_ENV=`bash <(curl -s https://raw.githubusercontent.com/rarrais/ros_coverage/master/ci_env.sh)`
-    - DOCKER_RUN_OPTS='$CI_ENV'
+    - DOCKER_RUN_OPTS='$CI_ENV -e CODACY_REPORT="true" -e CODECOV_REPORT="true" -e ADDITIONAL_DEBS="python-coverage curl jq gcovr"'
   matrix:
     - ROS_DISTRO="melodic"
 install:
