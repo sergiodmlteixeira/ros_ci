@@ -1,0 +1,22 @@
+version: 0.2
+env:
+  variables:
+    ROS_VERSION: melodic
+phases: 
+  pre_build:
+    commands:
+      - cd ..
+      - mkdir workspace
+      - cd workspace
+      - mkdir src
+      - cd src
+      - mkdir package
+      - cd ..
+      - cd ..
+      - ls | grep -v workspace | xargs mv -t workspace/src/package
+      - cd workspace
+      - . /opt/ros/$ROS_VERSION/setup.sh
+  build: 
+    commands: 
+      - catkin_make
+      - catkin_make --directory . run_tests
